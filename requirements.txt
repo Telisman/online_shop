@@ -2,3 +2,6 @@ Django == 4.2.5
 pymongo==3.12.3
 djongo
 pytz==2023.3
+mongoengine==0.27.0
+django-mongodb-engin==0.6.0
+requests
