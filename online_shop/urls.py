@@ -5,4 +5,5 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('shop_products.urls')),
+    path('', include('shopping_cart.urls')),
 ]
