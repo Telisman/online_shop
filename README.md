@@ -120,3 +120,21 @@ Run Django:
 py manage.py runserver
 ```
 
+## Our pages:
+### Product list:
+![product_list](https://github.com/Telisman/online_shop/assets/23407190/51ebbcb5-1c22-44de-ba81-c40e12b79396)
+
+
+### Product details:
+![product_di](https://github.com/Telisman/online_shop/assets/23407190/85018949-cf47-4540-bc8d-f4ab0771502c)
+
+
+### Cart:
+![cart](https://github.com/Telisman/online_shop/assets/23407190/190157a7-ab67-4a3e-85d6-3bcd1327d237)
+
+
+
+
+## Contact 
+### For any information contact me at: davortelisman@gmai.com
+
