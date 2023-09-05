@@ -1,12 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="CodePixar">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
     <title>Shopping Cart</title>
+    <link href="{% static 'css/cart_view.css' %}" rel="stylesheet">
+
 </head>
 <body>
+<div class="container-fluid" >
     <h1>Your Shopping Cart</h1>
-
     {% if cart_items %}
     <table>
         <thead>
@@ -14,7 +27,6 @@
                 <th>Product Name</th>
                 <th>Quantity</th>
                 <th>Price</th>
-                <th>Total</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -37,5 +49,8 @@
     {% else %}
     <p>Your cart is empty.</p>
     {% endif %}
+    <a href="{% url 'product_list' %}"  class="primary-btn">Back to Product List</a>
+</div>
+
 </body>
 </html>

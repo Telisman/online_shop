@@ -30,34 +30,27 @@
 
 
 </head>
-<!--<body>-->
-    <h1>Product List</h1>
 
     <!-- Search Form -->
   <form method="get" action="{% url 'product_list' %}">
-    <div>
-        <label for="category">Category:</label>
-        <select name="category" id="">
-            <option value="">All Categories</option>
-            <option value="accessories">Accessories</option>
-            <!-- Add other category options as needed -->
-        </select>
-    </div>
-    <div>
-        <label for="q">Search:</label>
-        <input type="text" name="q" id="q" value="{{ search_query }}">
-    </div>
-    <div>
-        <label for="sort">Sort by Price:</label>
-        <select name="sort" id="sort">
-            <option value="">No Sorting</option>
-            <option value="asc">Lowest Price</option>
-            <option value="desc">Highest Price</option>
-        </select>
-    </div>
-    <div>
-        <button type="submit">Filter</button>
-    </div>
+			<select name="category" id="">
+				<option value="">All Categories</option>
+				<option value="accessories">Accessories</option>
+				<option value="apparel">Apparel</option>
+				<option value="bags">Bags</option>
+				<option value="drinkware">Drinkware</option>
+				<option value="office">Office</option>
+				<option value="shop by brand">Shop by Brand</option>
+			</select>
+
+        	<input type="text" name="q" id="q" value="{{ search_query }}">
+
+			<select name="sort" id="sort">
+				<option value="">Select price</option>
+				<option value="asc">Lowest Price</option>
+				<option value="desc">Highest Price</option>
+			</select>
+	  <button type="submit">Filter</button>
 </form>
 
 
