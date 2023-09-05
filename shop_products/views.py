@@ -44,11 +44,6 @@ def product_detail(request, product_id):
 
 
 
-
-
-
-
-
 # API BACKEND ENDPOINT VIEW FUNCTION
 class ProductList(generics.ListCreateAPIView):
     queryset = Product.objects.all()
