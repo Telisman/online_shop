@@ -1,24 +1,107 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="CodePixar">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
     <title>{{ product.name }} Details</title>
+
+	<!--
+            CSS
+            ============================================= -->
+    <link href="{% static 'css/linearicons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/themify-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/nice-select.css' %}" rel="stylesheet">
+    <link href="{% static 'css/nouislider.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
 </head>
+
 <body>
-    <h1>{{ product.name }} Details</h1>
-    <p>{{ product.description }}</p>
-    <p>Price: ${{ product.price }}</p>
-    <div class="product-images">
-        {% for image_url in product.image_urls %}
-            <img src="{{ image_url }}" alt="{{ product.name }} Image">
-        {% endfor %}
-    </div>
+	<!--================Single Product Area =================-->
+	<div class="product_image_area">
+		<div class="container">
+			<div class="row s_product_inner">
+				<div class="col-lg-6">
+					<div class="s_Product_carousel">
+                        {% for image_url in product.image_urls %}
+						<div class="single-prd-item">
+							<img class="img-fluid" src="{{ image_url }}" alt="{{ product.name }} Image">
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="col-lg-5 offset-lg-1">
+					<div class="s_product_text">
+						<h3>{{ product.name }}</h3>
+						<h2>${{ product.price }}</h2>
+						<ul class="list">
+							<li><a class="active" href="#"><span>Category</span> {{ product.category }}</a></li>
+							<li><a class="active" href="#"><span>Subcategory</span> {{ product.subcategory }}</a></li>
+						</ul>
+						<p>{{ product.description }}</p>
+						<p>Product unique id: {{ product.id }}</p>
 
-    <!-- Add to Cart Button -->
-    <form method="POST" action="{% url 'add_to_cart' product.id %}">
-        {% csrf_token %}
-        <button type="submit">Add to Cart</button>
-    </form>
+						<div class="card_area d-flex align-items-center">
+                            <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                                {% csrf_token %}
+                                    <button type="submit" class="primary-btn">Add to Cart</button>
+                            </form>
+                            <a href="{% url 'product_list' %}"  class="primary-btn">Back to Product List</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--================End Single Product Area =================-->
 
-    <a href="{% url 'product_list' %}">Back to Product List</a>
+
+
+
+{% block javascript %}
+        <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+        <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'js/gmaps.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+<!--        <script src="{% static 'js/product_list_style.js' %}"></script>-->
+
+
+	{% endblock %}
 </body>
+
+<!--    <h1>{{ product.name }} Details</h1>-->
+<!--    <p>{{ product.description }}</p>-->
+<!--    <p>Price: ${{ product.price }}</p>-->
+<!--    <div class="product-images">-->
+<!--        {% for image_url in product.image_urls %}-->
+<!--            <img src="{{ image_url }}" alt="{{ product.name }} Image">-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Add to Cart Button &ndash;&gt;&ndash;&gt;-->
+<!--    <form method="POST" action="{% url 'add_to_cart' product.id %}">-->
+<!--        {% csrf_token %}-->
+<!--        <button type="submit">Add to Cart</button>-->
+<!--    </form>-->
+
+<!--    <a href="{% url 'product_list' %}">Back to Product List</a>-->
 </html>

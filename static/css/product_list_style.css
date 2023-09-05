@@ -1,0 +1,44 @@
+/* styles.css */
+
+/* Style the header with a background image */
+h1 {
+    font-size:36px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    background-image: url('images/header-background.jpg');
+    background-size: cover;
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Style the product list with a background image */
+ul {
+    list-style-type: none;
+    padding: 0;
+    background-image: url('images/list-background.jpg');
+    padding: 20px;
+    border-radius: 10px;
+}
+
+li {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url('images/product-background.jpg');
+    border-radius: 10px;
+}
+
+/* Style the product images */
+.product-images img {
+    height: auto;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add more background images to other elements as needed */
