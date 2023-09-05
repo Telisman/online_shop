@@ -80,7 +80,7 @@ https://github.com/Telisman/online_shop.git
 Step 2:
 Activate virtual environment:
 ```
-path\to\venv\Scripts\activate
+venv\Scripts\activate
 ```
 
 Step 3:
