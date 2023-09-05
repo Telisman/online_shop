@@ -5,8 +5,7 @@ from .serializers import ProductSerializer
 
 from django.shortcuts import render
 
-def react_view(request):
-    return render(request, 'index.html')
+
 
 
 class ProductList(generics.ListCreateAPIView):
